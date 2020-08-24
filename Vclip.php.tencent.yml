@@ -1,0 +1,159 @@
+<?php
+error_reporting(0);
+if(isset($_POST['submit'])){
+	#header('refresh: 2');
+$mo=$_POST['mo'];
+	$refer=$_POST['refer'];
+
+		function RandomNumber($length){
+$str="";
+for($i=0;$i<$length;$i++){
+$str.=mt_rand(0,9);
+}
+return $str;
+}
+
+$f = array("sameer","suresh","chettiar","jatin","chauhan","agarwal","rahul","tanmay","tiwari","kunal","rasania","sunil","kumar","gaurav","arihant","jain","falguni","yashashree","arpi","arshish","gupta","tanmay","samtgr","kiyera","atul","abhay","chandra","shoibaakriti","aanchal","talreja","aatholiy","abhijeet","akkalwar","abhijeet","bajpai","abhijeetsh","abhirup","roy","abhishek","sumit","kapil","suman","rani","ramu","souvik","yogesh","umesh","sahadat","ankit","prasant","pravakar","sunil","sibaram");
+$fname = $f[mt_rand(0,50)];9
+
+$l = array("sameer","suresh","chettiar","jatin","chauhan","agarwal","rahul","tanmay","tiwari","kunal","rasania","sunil","kumar","gaurav","arihant","jain","falguni","yashashree","arpi","arshish","gupta","tanmay","samtgr","kiyera","atul","abhay","chandra","shoibaakriti","aanchal","talreja","aatholiy","abhijeet","akkalwar","abhijeet","bajpai","abhijeetsh","abhirup","roy","abhishek","sumit","kapil","rani","ramu","souvik","yogesh","umesh","sahadat","ankit","prasant","pravakar","sunil","sibaram");
+$lname = $l[mt_rand(0,50)];
+
+$m = array("acer","asus","blackberry","gionee","google","honor","htc","samsung","oppo","vivo","HUAWEI","INFINIX","INTEX","LYF","ITEL","MICROMAX","NOKIA","XOLO","KARNONN","LAVA","LeEco","","LG","MEIZU","ONEPLUS","PANASONIC","REALME","SONY");
+$me = $m[mt_rand(0,27)];
+$d = array("z1","a3","a3s","x2","zs630kl","6a","v15","m30","m10","t4","5","z2","k20","k30","6 pro","note 5","7a","6a","a5","9 pro","f1","x5","v11","y11","z6","u20","z4i","iqq3","y2","p5","nio3","x5","x3","y13","x2","a51");
+$de = $d[mt_rand(0,35)];
+$no = rand(1,999);
+
+$no = rand(1,999);
+
+
+function rando($length) {
+    $characters = '1234567890abcdefghijklmnopqrstuvwxyz';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+$name=''.$fname.''.$lname.''.$no.'';
+
+
+
+
+$url="https://winallgifts.com/admin/api/v3/account.signUp.php";
+
+$data='email='.$name.'%40gmail.com&fullname='.$fname.'%20'.$lname.'&clientId=1&password='.$name.'&reg=Manual&username='.$name.'&';
+
+$headers[]='Host:etl.mymymp4.com';
+$headers[]='User-Agent:http://etl.mymymp4.com/api/event_report/v1/vidhunter/event/report?nonce=1031752829&ts=1597735040185&sign=72eb04fb12126b3c95a5a01a52e0a65a';
+$headers[]='Content-Type: application/x-www-form-urlencoded; charset=UTF-8';
+
+
+
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$url);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS,$data);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	   curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+;
+curl_setopt( $ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
+$output= curl_exec ($ch);
+	$json=json_decode($output,true);
+	curl_close ($ch);
+	
+$at=$json["application/json; charset=utf-8"];
+$ai=$json["application/json; charset=utf-8"];
+
+
+##########################################
+
+
+$url2="https://vclip.com/admin/api/v3/account.Refer.php";
+
+$data2='data={"report_time":1597735040183,"event_class":1,"event_name":"videoClip_advertise","attributes":["ad_request_preload_fail"],"ext_data":{"app_language":"english","ad_channelid":"011","ad_type":"01","appsflyer_device_id":"1572612794447-1906976598243519251","utm_medium":"videobuddy","ad_position":"feed","ad_from":"116","af_channel":"","utm_source2":"vbhomespecialbonus","errorcode":"1000","adult_content":"1","error_msg":"javax.net.ssl.SSLHandshakeException%3A%20java.security.cert.CertPathValidatorException%3A%20Trust%20anchor%20for%20certification%20path%20not%20found.","media_source":"","agency":"","ad_category":"sdk","utm_campaign":"homespecialbonus","utm_campaign2":"homespecialbonus","local_report_time":"1597735040182","ad_startup_type":"0","phone_brand":"vivo","af_status":"","country_code":"US","referrer":"utm_source%3Dvbhomespecialbonus%26utm_campaign%3Dhomespecialbonus%26utm_medium%3Dvideobuddy%26utm_type%3Dseo%09%09%09%09","ad_positon_id":"1162001","attribute1":"ad_request_preload_fail","ad_servertype":"facebook","device_language":"en","ad_style":"2001","utm_source":"vbhomespecialbonus"}}
+
+$headers[]='Host: etl.mymymp4.com';
+$headers[]='User-Agent:http://etl.mymymp4.com/api/event_report/v1/vidhunter/event/report?nonce=1031752829&ts=1597735040185&sign=72eb04fb12126b3c95a5a01a52e0a65a';
+$headers[]='Content-Type: application/x-www-form-urlencoded; charset=UTF-8';
+
+
+
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$url2);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS,$data2);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	   curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt( $ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
+
+$output2= curl_exec ($ch);
+	$json2=json_decode($output2,true);
+	curl_close ($ch);
+	
+$mog=$json["message"];
+
+echo"<hr>msg=$output2";
+
+##############################################
+
+ 
+
+
+
+
+}    
+
+	
+	if(!isset($_POST['submit'])){
+	
+echo"
+<center><font color='blue'> 
+
+ <center>
+ 
+<fieldset>
+<form action='' method='post'>
+
+<center><font color='green'> 
+
+ENTER YOUR REFER CODE <br>
+<input type='text' name='refer'  class='text' placeholder=' ENTER YOUR REFER CODE HERE...' required><br/>
+
+<input type='submit' class='submit' name='submit' value='SUBMIT'>
+<div id='formFooter'>
+
+
+
+
+
+
+";
+	
+	
+}
+	
+?>
+
+on/x-www-form-urlencoded; charset=UTF-8';
+
+
+
+
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,$url2);
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS,$data2);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	   curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt( $ch, CURLOPT_HTTPHEADER, array("REMOTE_ADDR: $ip", "HTTP_X_FORWARDED_FOR: $ip"));
+
+$output2= curl_exec ($ch);
+	$json2=json_decode($output2);
